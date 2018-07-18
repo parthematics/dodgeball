@@ -24,8 +24,8 @@ public class Game extends Canvas implements Runnable {
         handler = new Handler();
         rand = new Random();
 
-        for (int i = 0; i < 20; i++) {
-            handler.add(new Player(0, 0, ObjectID.Player));
+        for (int i = 0; i < 10; i++) {
+            handler.add(new Player(rand.nextInt(HEIGHT), rand.nextInt(WIDTH), ObjectID.Player));
         }
     }
 

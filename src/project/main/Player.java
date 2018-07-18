@@ -23,6 +23,6 @@ public class Player extends Thing {
     @Override
     public void render(Graphics g) {
         g.setColor(Color.WHITE);
-        g.fillRect(xPos, yPos, 32, 32);
+        g.fillOval(xPos, yPos, 32, 32);
     }
 }
