@@ -13,8 +13,11 @@ public class Game extends Canvas implements Runnable {
     private Thread thread;
     private boolean isRunning = false;
 
+    private Handler handler;
+
     public Game() {
         new Frame(WIDTH, HEIGHT, "dodgeball", this);
+        handler = new Handler();
     }
 
     public synchronized void start() {
@@ -60,7 +63,7 @@ public class Game extends Canvas implements Runnable {
     }
 
     private void tick() {
-
+        handler.tick();
     }
 
     private void render() {
@@ -72,6 +75,8 @@ public class Game extends Canvas implements Runnable {
         Graphics g = strat.getDrawGraphics();
         g.setColor(Color.BLACK);
         g.fillRect(0, 0, WIDTH, HEIGHT);
+
+        handler.render(g);
 
         g.dispose();
         strat.show();
