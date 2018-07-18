@@ -21,11 +21,11 @@ public class Handler {
         }
     }
 
-    public void addThing(Thing thing) {
+    public void add(Thing thing) {
         this.things.add(thing);
     }
 
-    public void removeThing(Thing thing) {
+    public void remove(Thing thing) {
         this.things.remove(thing);
     }
 

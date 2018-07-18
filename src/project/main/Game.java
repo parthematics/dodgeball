@@ -18,6 +18,8 @@ public class Game extends Canvas implements Runnable {
     public Game() {
         new Frame(WIDTH, HEIGHT, "dodgeball", this);
         handler = new Handler();
+        handler.add(new Player(100, 100, ObjectID.Player));
+        handler.add(new Player(200, 200, ObjectID.Player));
     }
 
     public synchronized void start() {
