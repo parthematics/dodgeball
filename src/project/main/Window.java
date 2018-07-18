@@ -9,9 +9,9 @@ public class Window extends Canvas {
     private static final long serialVersionUID = -2413443434825455921L;
 
     public Window(int width, int height, String name, Game g) {
-		JFrame frame =  new JFrame(name);
+        JFrame frame = new JFrame(name);
 
-		frame.setPreferredSize(new Dimension(width, height));
+        frame.setPreferredSize(new Dimension(width, height));
         frame.setMaximumSize(new Dimension(width, height));
         frame.setMinimumSize(new Dimension(width, height));
 
@@ -21,5 +21,5 @@ public class Window extends Canvas {
         frame.add(g);
         frame.setVisible(true);
         g.start();
-	}
+    }
 }
