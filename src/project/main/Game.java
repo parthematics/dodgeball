@@ -4,8 +4,11 @@
 
 package project.main;
 
-import java.awt.*;
+import java.awt.Graphics;
+import java.awt.Canvas;
+import java.awt.Color;
 import java.awt.image.BufferStrategy;
+import java.util.Random;
 
 public class Game extends Canvas implements Runnable {
 
@@ -14,12 +17,16 @@ public class Game extends Canvas implements Runnable {
     private boolean isRunning = false;
 
     private Handler handler;
+    private Random rand;
 
     public Game() {
         new Frame(WIDTH, HEIGHT, "dodgeball", this);
         handler = new Handler();
-        handler.add(new Player(100, 100, ObjectID.Player));
-        handler.add(new Player(200, 200, ObjectID.Player));
+        rand = new Random();
+
+        for (int i = 0; i < 20; i++) {
+            handler.add(new Player(0, 0, ObjectID.Player));
+        }
     }
 
     public synchronized void start() {
@@ -37,7 +44,9 @@ public class Game extends Canvas implements Runnable {
         }
     }
 
-    /** @source As cited by Zachary Berenger. */
+    /**
+     * @source As cited by Zachary Berenger.
+     */
     public void run() {
         long prevTime = System.nanoTime();
         double numTicks = 60.0, ns = 1000000000 / numTicks, delta = 0;

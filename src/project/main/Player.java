@@ -1,13 +1,17 @@
 package project.main;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.util.Random;
 
 public class Player extends Thing {
 
+    Random rand = new Random();
+
     public Player(int xPos, int yPos, ObjectID id) {
         super(xPos, yPos, id);
-        xVel = 1;
-        yVel = 1;
+        xVel = rand.nextInt(5) + 1;
+        yVel = rand.nextInt(5);
     }
 
     @Override
