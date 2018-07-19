@@ -16,17 +16,17 @@ public class Game extends Canvas implements Runnable {
     private Thread thread;
     private boolean isRunning = false;
 
-    private Handler handler;
     private Random rand;
+    private Handler handler;
 
     public Game() {
-        new Frame(WIDTH, HEIGHT, "dodgeball", this);
         handler = new Handler();
+        this.addKeyListener(new KeyboardInput(handler)) ;
+
+        new Frame(WIDTH, HEIGHT, "dodgeball", this);
         rand = new Random();
 
-        for (int i = 0; i < 10; i++) {
-            handler.add(new Player(rand.nextInt(HEIGHT), rand.nextInt(WIDTH), ObjectID.Player));
-        }
+        handler.add(new Player(WIDTH/2 - 32, HEIGHT/2 - 32, ObjectID.Player));
     }
 
     public synchronized void start() {

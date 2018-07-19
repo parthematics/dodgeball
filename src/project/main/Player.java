@@ -10,8 +10,7 @@ public class Player extends Thing {
 
     public Player(int xPos, int yPos, ObjectID id) {
         super(xPos, yPos, id);
-        xVel = rand.nextInt(5) + 1;
-        yVel = rand.nextInt(5);
+
     }
 
     @Override
